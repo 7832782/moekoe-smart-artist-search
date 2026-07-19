@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "plugin_id": "moekoe-smart-artist-search",
+  "name": "MoeKoe Smart Artist Search",
+  "version": "1.0.0",
+  "description": "点击歌手名时，自动按顿号分割多位歌手并弹出列表选择，解决联合搜索不精确的问题。",
+  "author": "Hanako",
+  "minversion": null,
+  "moekoe": true,
+  "permissions": [],
+  "host_permissions": ["<all_urls>", "file:///*"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>", "file:///*"],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["hook.js"],
+      "matches": ["<all_urls>", "file:///*"]
+    }
+  ]
+}
